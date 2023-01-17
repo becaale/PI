@@ -2,7 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, API_KEY } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/dogs`, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -32,9 +32,9 @@ const { Dog, Breed, Temperament } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-Dog.belongsTo(Raza);
-Breed.belongsToMany(Temperamento, { through: "breed_temperament", timestamps: false });
-Temperament.belongsToMany(Raza, { through: "breed_temperament", timestamps: false });
+Dog.belongsTo(Breed, { timestamps: false });
+Breed.belongsToMany(Temperament, { through: "breed_temperament", timestamps: false });
+Temperament.belongsToMany(Breed, { through: "breed_temperament", timestamps: false });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
