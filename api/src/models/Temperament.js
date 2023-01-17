@@ -4,7 +4,7 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "dog",
+    "temperament",
     {
       id: {
         type: DataTypes.UUID,
@@ -19,8 +19,3 @@ module.exports = (sequelize) => {
     { timestamps: false }
   );
 };
-
-/*     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }, */
