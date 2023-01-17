@@ -14,6 +14,7 @@ module.exports = (sequelize) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       height: {
         type: DataTypes.FLOAT,
@@ -24,7 +25,9 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       life_span: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.ENUM,
+        values: ["10 - 15", "10 - 20", "10 - 25", "10 - 30", "10 - 35", "10 - 40"],
+        defaultValue: "10 - 15",
       },
     },
     { timestamps: false }
