@@ -17,17 +17,19 @@ module.exports = (sequelize) => {
         unique: true,
       },
       height: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       weight: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       life_span: {
-        type: DataTypes.ENUM,
-        values: ["10 - 15", "10 - 20", "10 - 25", "10 - 30", "10 - 35", "10 - 40"],
+        type: DataTypes.STRING,
         defaultValue: "10 - 15",
+      },
+      image: {
+        type: DataTypes.STRING,
       },
     },
     { timestamps: false }
