@@ -1,0 +1,144 @@
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 105%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -2;
+}
+
+.style0 {
+  background-attachment: fixed;
+  height: 642.213px;
+  padding-top: 192px;
+  color: rgb(55, 45, 45);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 192px 0px 80px;
+  border: 0px none rgb(55, 45, 45);
+  font: 18px / 25.9999px roboto, sans-serif;
+  vertical-align: top;
+}
+
+.style1 {
+  text-align: left;
+  max-width: 970px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-width: 300px;
+  box-sizing: border-box;
+  margin: 0px 32.6px;
+  padding: 0px 15px;
+  border: 0px none rgb(55, 45, 45);
+  font: 18px / 25.9999px roboto, sans-serif;
+  vertical-align: top;
+}
+
+.style2 {
+  align-items: flex-end;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  box-sizing: border-box;
+  margin: 0px -15px;
+  padding: 0px;
+  border: 0px none rgb(55, 45, 45);
+  font: 18px / 25.9999px roboto, sans-serif;
+  vertical-align: top;
+}
+
+.style3 {
+  flex-basis: 58.3333%;
+  max-width: 58.3333%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px 15px;
+  border: 0px none rgb(55, 45, 45);
+  font: 18px / 25.9999px roboto, sans-serif;
+  vertical-align: top;
+}
+
+.style4 {
+  color: rgb(55, 45, 45);
+  font-size: 36px;
+  line-height: 47.9999px;
+  letter-spacing: 0.792px;
+  text-transform: uppercase;
+  display: block;
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px none rgb(55, 45, 45);
+  vertical-align: top;
+}
+
+.style5 {
+  color: rgb(255, 247, 153);
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px none rgb(255, 247, 153);
+  font: 36px / 47.9999px montserrat, sans-serif;
+  vertical-align: top;
+}
+
+.style6 {
+  box-sizing: border-box;
+}
+
+.style7 {
+  font-size: 80px;
+  color: rgb(255, 255, 255);
+  line-height: 88px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px none rgb(255, 255, 255);
+  vertical-align: top;
+}
+
+.style8 {
+  box-sizing: border-box;
+}
+
+.style9 {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-family: montserrat, sans-serif;
+  background: rgb(255, 255, 255) url("https://livedemo00.template-help.com/images/button-icon.png") no-repeat scroll 91%
+    50% / auto padding-box border-box;
+  border-radius: 3px;
+  padding-right: 86px;
+  padding: 18px 86px 18px 27px;
+  font-size: 24px;
+  display: inline-block;
+  text-align: center;
+  line-height: 28.8px;
+  white-space: nowrap;
+  max-width: 100%;
+  border-style: solid;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  cursor: pointer;
+  vertical-align: middle;
+  z-index: 1;
+  text-decoration: none solid rgb(255, 255, 255);
+  margin-top: 37px;
+  transition: all 0.3s ease 0s;
+  box-sizing: border-box;
+  margin: 37px 0px 0px;
+  border: 0px solid rgb(255, 255, 255);
+}
