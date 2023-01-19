@@ -1,11 +1,11 @@
 video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 105%;
-    min-height: 100%;
-    transform: translateX(calc((100% - 100vw) / 2));
-    z-index: -2;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 105%;
+  min-height: 100%;
+  transform: translateX(calc((100% - 100vw) / 2));
+  z-index: -2;
 }
 
 .style0 {
@@ -115,30 +115,112 @@ video {
 }
 
 .style9 {
-  position: relative;
-  color: rgb(255, 255, 255);
+  /* Font & Text */
   font-family: montserrat, sans-serif;
-  background: rgb(255, 255, 255) url("https://livedemo00.template-help.com/images/button-icon.png") no-repeat scroll 91%
-    50% / auto padding-box border-box;
-  border-radius: 3px;
-  padding-right: 86px;
-  padding: 18px 86px 18px 27px;
   font-size: 24px;
-  display: inline-block;
-  text-align: center;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: 0.18px;
   line-height: 28.8px;
-  white-space: nowrap;
-  max-width: 100%;
-  border-style: solid;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  cursor: pointer;
-  vertical-align: middle;
-  z-index: 1;
   text-decoration: none solid rgb(255, 255, 255);
-  margin-top: 37px;
-  transition: all 0.3s ease 0s;
-  box-sizing: border-box;
-  margin: 37px 0px 0px;
+  text-align: center;
+  text-indent: 0px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-spacing: 0px;
+
+  /* Color & Background */
+  background-attachment: scroll;
+  background-color: rgb(255, 255, 255);
+  background-image: url("https://livedemo00.template-help.com/landing_58095/images/button-icon.png");
+  background-position: 91% 50%;
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+
+  /* Box */
+  height: 64.8px;
+  width: 245.462px;
   border: 0px solid rgb(255, 255, 255);
+  border-top: 0px solid rgb(255, 255, 255);
+  border-right: 0px solid rgb(255, 255, 255);
+  border-bottom: 0px solid rgb(255, 255, 255);
+  border-left: 0px solid rgb(255, 255, 255);
+  margin: 37px 0px 0px;
+  padding: 18px 86px 18px 27px;
+  max-height: none;
+  min-height: 0px;
+  max-width: 100%;
+  min-width: 0px;
+
+  /* Positioning */
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  float: none;
+  display: inline-block;
+  clear: none;
+  z-index: 1;
+
+  /* List */
+  list-style-image: none;
+  list-style-type: disc;
+  list-style-position: outside;
+
+  /* Table */
+  border-collapse: separate;
+  border-spacing: 0px 0px;
+  caption-side: top;
+  empty-cells: show;
+  table-layout: auto;
+
+  /* Miscellaneous */
+  overflow: visible;
+  cursor: pointer;
+  visibility: visible;
+
+  /* Effects */
+  transform: none;
+  transition: all 0.3s ease 0s;
+  outline: rgb(255, 255, 255) dashed 0px;
+  outline-offset: 1px;
+  box-sizing: border-box;
+  resize: none;
+  text-shadow: none;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  box-shadow: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.style9::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 63px;
+  border-radius: 3px;
+  background-color: #372d2d;
+  z-index: -1;
+  transition: 0.3s right ease;
+}
+
+.style9::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  border-radius: 3px;
+  background-color: #fff;
+  z-index: -1;
+  transition: 0.3s right ease;
 }

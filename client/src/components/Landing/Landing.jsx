@@ -17,8 +17,8 @@ export default function Landing() {
           <div className={styles.style2}>
             <div className={styles.style3}>
               <p className={styles.style4}>
-                <span className={styles.style5}>we offer</span>
-                <br className={styles.style6} /> <span class="style-7">professional</span>
+                <span className={styles.style5}>All breeds</span>
+                <br className={styles.style6} /> <span className={styles.style7}>professional</span>
                 <br className={styles.style8} />
                 daycare, grooming &amp; training
               </p>{" "}
