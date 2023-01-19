@@ -33,7 +33,8 @@ const getBreedById = async (id) => {
   return breed;
 };
 
-const createBreed = async (name, height, weight, life_span, image, temperaments) => {
+const createBreed = async (name, height, weight, life_span, image, temperaments = []) => {
+  if ((name, height, weight)) throw Error("Faltan datos obligatorios");
   const newBreed = await Breed.create({
     name,
     height,
@@ -41,6 +42,7 @@ const createBreed = async (name, height, weight, life_span, image, temperaments)
     life_span,
     image,
   });
+
   const temperamentos = await Temperament.findAll({
     where: {
       name: temperaments,
@@ -66,6 +68,7 @@ const createBreed = async (name, height, weight, life_span, image, temperaments)
 };
 
 const getBreedsDB = async (name) => {
+  console.log(name);
   const query = name
     ? {
         where: {
