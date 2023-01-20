@@ -1,0 +1,119 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  
+    height: 20rem;
+    margin: 0.5rem auto 0 auto;
+  
+    box-shadow: 0 2px 20px #a239ca;
+    border-radius: 0.2rem;
+  
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  
+    /* border-radius: 16px; */
+    /* filter: blur(8px); */
+    /* transform: translateZ(-1px);  */
+    /* animation: rgb 6s linear infinite; */
+  }
+  
+  .card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+  }
+  
+  .card h2 {
+    padding: 0.1rem;
+    margin: 0rem;
+    bottom: 100%;
+    display: flex;
+    align-items: flex-start;
+  
+    color: bisque;
+  }
+  
+  .card p {
+    padding: 0 1rem;
+    padding: 0rem;
+    margin: 0rem;
+  
+    /* font-weight: bold; */
+    color: bisque;
+    /*   color: #0e0b16;
+    background-color: #0e0b16d6; */
+  }
+  
+  .cont {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    height: 50%;
+    width: 100%;
+  }
+  
+  .data {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+  
+    top: 75%;
+    height: 25%;
+    width: 100%;
+  
+    background-image: linear-gradient(to top, #0e0b16, #0e0b1669);
+  }
+  .especs{
+  
+    display: flex;
+    flex-direction: row;
+  
+    justify-self: flex-end;
+    align-items: flex-end;
+    justify-content: space-around;
+  }
+  
+  
+  .closebtn {
+    position: absolute;
+    cursor: pointer;
+    font-family: "Open Sans Condensed", sans-serif;
+    line-height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.4;
+    background-color: #d00404;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .closebtn:hover {
+    opacity: 0.7;
+  }
+  
+  .cardBtnFav {
+    padding: 0rem;
+    width: 7%;
+    align-self: flex-start;
+    border: 0.5px transparent;
+   background: transparent;
+  
+   /*  transition: background 200ms ease-in, color 200ms ease-in; */
+  }
+  
+  
