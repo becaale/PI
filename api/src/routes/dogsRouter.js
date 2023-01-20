@@ -40,7 +40,7 @@ dogsRouter.post("/", async (req, res) => {
       JSON.stringify(height),
       JSON.stringify(weight),
       life_span,
-      image,
+      JSON.stringify(image),
       temperaments
     );
     res.status(200).json(newBreed);

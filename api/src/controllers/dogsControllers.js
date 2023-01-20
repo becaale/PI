@@ -34,7 +34,7 @@ const getBreedById = async (id) => {
 };
 
 const createBreed = async (name, height, weight, life_span, image, temperaments = []) => {
-  if ((name, height, weight)) throw Error("Faltan datos obligatorios");
+  if (!name || !height || !weight) throw Error("Faltan datos obligatorios");
   const newBreed = await Breed.create({
     name,
     height,
@@ -108,7 +108,7 @@ const getBreedsAPI = async (id, name) => {
           weight,
           height,
           life_span,
-          image: image.url,
+          image: image,
           temperament,
         };
       });
@@ -147,7 +147,7 @@ const formatBreed = (breeds) => {
       height: JSON.parse(height),
       weight: JSON.parse(weight),
       life_span,
-      image,
+      image: JSON.parse(image),
       temperaments: temperaments
         .map((temperament) => {
           return temperament.name;
