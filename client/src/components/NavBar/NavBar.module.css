@@ -1,0 +1,45 @@
+.bar {
+  width: 110%;
+  height: 40px;
+  color: white;
+  margin: 30px auto;
+  z-index: 999;
+}
+
+.bar .ul {
+  float: left;
+  list-style: none;
+  display: block;
+}
+.bar .ul .li {
+  float: left;
+  list-style: none;
+  display: block;
+  width: 210px;
+  background-color: rgba(148, 148, 148, 0.693);
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 4px;
+  border-radius: 5px;
+}
+.ul .li .a {
+  display: block;
+  cursor: context-menu;
+}
+.ul .li .a:hover {
+  display: block;
+  background-color: floralwhite;
+  color: steelblue;
+  border-radius: 5px;
+}
+.bar .ul .li .ul .li {
+  margin-bottom: 0;
+  display: none;
+}
+.bar .ul .li:hover .ul .li {
+  display: block;
+
+}
