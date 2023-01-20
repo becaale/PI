@@ -8,11 +8,11 @@ const Home = () => {
   return (
     <>
       <video
-        src="https://vod-progressive.akamaized.net/exp=1674169391~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2148%2F8%2F210743842%2F722740798.mp4~hmac=ac39a9f9c4ee6638b3d10c657818022052a50809407f6ae7d8c0813045db70a2/vimeo-prod-skyfire-std-us/01/2148/8/210743842/722740798.mp4"
+        src="https://vod-progressive.akamaized.net/exp=1674229913~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2362%2F17%2F436810802%2F1905309627.mp4~hmac=b9a0f14a435bbb5860d02f6556d2f4fc6ea97abf363b1ced368766930beced64/vimeo-prod-skyfire-std-us/01/2362/17/436810802/1905309627.mp4"
         autoplay="true"
         muted="true"
         loop="true"
-        poster="https://carontestudio.com/img/contacto.jpg"
+        poster="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg"
       ></video>
       <div className={styles.BreedList}>
         <Breeds />
@@ -48,7 +48,12 @@ const Home = () => {
             </li>
             <li>
               <a href="https://github.com/becaale">
-                <img width="30" height="30" src='https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Github-512.png' alt="github" />
+                <img
+                  width="30"
+                  height="30"
+                  src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Github-512.png"
+                  alt="github"
+                />
               </a>
             </li>
           </ul>
