@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
-import { addFavorite, deleteFavorite } from "../../redux/actions";
 import styles from "./Breed.module.css";
 
 export default function Breed({ id, name, species, gender, image }) {

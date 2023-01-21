@@ -1,8 +1,7 @@
 .bar {
-  width: 110%;
   height: 40px;
-  color: white;
-  margin: 30px auto;
+  color: #281a1a;
+  margin: 0px auto 24px;
   z-index: 999;
 }
 
@@ -15,14 +14,15 @@
   float: left;
   list-style: none;
   display: block;
-  width: 210px;
-  background-color: rgba(148, 148, 148, 0.693);
+  width: 180px;
+  background-color: rgb(149 148 134 / 85%);
   font-size: 20px;
   text-align: center;
   text-decoration: none;
   height: 40px;
   line-height: 40px;
   margin-right: 4px;
+  margin-top: 3px;
   border-radius: 5px;
 }
 .ul .li .a {
@@ -31,9 +31,12 @@
 }
 .ul .li .a:hover {
   display: block;
-  background-color: floralwhite;
-  color: steelblue;
-  border-radius: 5px;
+  background-color: rgb(88, 87, 73);
+  color: whitesmoke;
+
+/*   background-color: rgb(149 148 134);
+  color: whitesmoke;
+ */  border-radius: 5px;
 }
 .bar .ul .li .ul .li {
   margin-bottom: 0;
@@ -41,5 +44,4 @@
 }
 .bar .ul .li:hover .ul .li {
   display: block;
-
 }

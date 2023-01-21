@@ -70,6 +70,7 @@ video {
 }
 
 .style4 {
+  -webkit-text-stroke: 1px rgba(206, 206, 199, 0.514);
   color: rgb(55, 45, 45);
   font-size: 36px;
   line-height: 47.9999px;
@@ -77,7 +78,7 @@ video {
   text-transform: uppercase;
   display: block;
   font-family: montserrat, sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -86,6 +87,7 @@ video {
 }
 
 .style5 {
+  -webkit-text-stroke: 1px rgb(132, 126, 70);
   color: rgb(255, 247, 153);
   box-sizing: border-box;
   margin: 0px;
@@ -100,7 +102,8 @@ video {
 }
 
 .style7 {
-  font-size: 80px;
+  font-size: calc(2em + 1vw);
+  -webkit-text-stroke: 1px black;
   color: rgb(255, 255, 255);
   line-height: 88px;
   box-sizing: border-box;
@@ -151,7 +154,7 @@ video {
   padding: 18px 86px 18px 27px;
   max-height: none;
   min-height: 0px;
-  max-width: 100%;
+  max-width: 250px;
   min-width: 0px;
 
   /* Positioning */

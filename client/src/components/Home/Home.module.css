@@ -2,51 +2,85 @@ video {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 105%;
+  min-width: 100%;
   min-height: 100%;
   transform: translateX(calc((100% - 100vw) / 2));
   z-index: -2;
 }
-.BreedList {
+.Pagination {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 14rem));
-  gap: 3rem;
-  justify-content: center;
-  padding: 25px;
-  padding-bottom: 100px;
+  grid-template-columns: 65px 1fr 65px;
+  padding-bottom: 5px;
 }
 
+.BreedList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 17rem));
+  gap: 3rem;
+  justify-content: center;
+  padding: 15px;
+}
 
 .footer {
-    margin-top: 134px;
-    width: 100%;
-    height: 80px;
-    background: #181111;
+  width: 100%;
+  height: 80px;
+  /*   background: #181111; */
 }
 
 .footer .credits {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    position: relative;
-    top: 20px;
-    left: -40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  top: 20px;
+  left: -40px;
 }
 
 .footer li {
-    color: white;
-    display: inline-block;
-    margin-left: 30px;
+  color: white;
+  display: inline-block;
+  margin-left: 30px;
 }
 
 .nombre {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    bottom: 5px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  bottom: 5px;
 }
 
 .nombre:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+.formcontrol {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 15px 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #475f7b;
+  background-color: #fff;
+  border: 1px solid #dfe3e7;
+  border-radius: 0.267rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.formcontrol:focus {
+  color: #475f7b;
+  background-color: #fff;
+  border-color: #5a8dee;
+  outline: 0;
+  box-shadow: 0 3px 8px 0 rgb(0 0 0 / 10%);
+}
+.card {
+  box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #475f7b;
+  overflow: hidden;
 }

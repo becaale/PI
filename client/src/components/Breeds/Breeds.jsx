@@ -29,7 +29,7 @@ function Breeds({ characters, onClose, orderCards, filterCards }) {
 
 const mapStateToProps = (state) => {
   return {
-    characters: state.allCharacters,
+    characters: state.pageChars,
   };
 };
 const mapDispatchToProps = (dispatch) => {
