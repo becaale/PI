@@ -1,5 +1,6 @@
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const GET_ALL_CHARACTERS = "GET_ALL_CHARACTERS";
+export const SET_PAGE_CHARACTER = "SET_PAGE_CHARACTER";
 export const SEARCH_CHARACTER = "SEARCH_CHARACTER";
 export const DELETE_CHARACTER = "DELETE_CHARACTER";
 export const CREATE_CHARACTER = "CREATE_CHARACTER";
@@ -26,6 +27,13 @@ export const getAllCharacters = () => {
           payload: formatChar(data),
         });
       });
+  };
+};
+
+export const setPageCharacter = (start, end) => {
+  return {
+    type: SET_PAGE_CHARACTER,
+    payload: { start, end },
   };
 };
 

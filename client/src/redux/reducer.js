@@ -4,15 +4,15 @@ import {
   GET_CHARACTERS,
   GET_ALL_CHARACTERS,
   SEARCH_CHARACTER,
+  SET_PAGE_CHARACTER,
   FILTER,
   ORDER,
 } from "./actions";
 
 const initialState = {
+  pageChars: [],
   characters: [],
   allCharacters: [],
-  myCharacters: [],
-  detail: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -27,12 +27,22 @@ const rootReducer = (state = initialState, action) => {
         characters: [...state.characters, ...action.payload.filter((element) => !state.characters.includes(element))],
       };
     case GET_ALL_CHARACTERS:
-      console.log(action.payload);
       return {
         ...state,
         allCharacters: [
           ...state.allCharacters,
           ...action.payload.filter((element) => !state.allCharacters.includes(element)),
+        ],
+      };
+    case SET_PAGE_CHARACTER:
+      return {
+        ...state,
+        pageChars: [
+          ...state.allCharacters.filter((element, index) => {
+            if (index >= action.payload.start && index <= action.payload.end - 1) {
+              return true;
+            }
+          }),
         ],
       };
     case SEARCH_CHARACTER:
