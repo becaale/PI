@@ -6,8 +6,8 @@ import { setPageCharacter } from "../../redux/actions";
 
 import styles from "./Pagination.module.css";
 
-const Pagination = ({ allCharacters, setPageCharacter }) => {
-  const [chars, SetChars] = useState(allCharacters);
+const Pagination = ({ characters, setPageCharacter }) => {
+  const [chars, SetChars] = useState(characters);
   const [charsPerPage, SetCharsPerPage] = useState(8);
   const [currentPage, SetCurrentPage] = useState(1);
 
@@ -48,7 +48,7 @@ const Pagination = ({ allCharacters, setPageCharacter }) => {
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([]);
 
   useEffect(() => {
-    if (chars.length !== allCharacters.length) SetChars(allCharacters);
+    if (chars.length !== characters.length) SetChars(characters);
     let tempNumberOfButtons = [...arrOfCurrButtons];
 
     let dotsInitial = "...";
@@ -100,7 +100,7 @@ const Pagination = ({ allCharacters, setPageCharacter }) => {
     const value = currentPage * charsPerPage;
     onPageChangeEvent(value - charsPerPage, value);
     //console.log(tempNumberOfButtons, arrOfCurrButtons, numOfButtons, currentPage, value, charsPerPage, numOfPages);
-  }, [allCharacters, currentPage, charsPerPage, numOfPages]);
+  }, [characters, currentPage, charsPerPage, numOfPages]);
 
   return (
     <>
@@ -113,9 +113,6 @@ const Pagination = ({ allCharacters, setPageCharacter }) => {
               </a>
             </li>
             {arrOfCurrButtons.map((data, index) => {
-              {
-                console.log(currentPage, data);
-              }
               return (
                 <li key={index} className={`${styles.dtitem}`}>
                   <a

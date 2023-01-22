@@ -1,3 +1,4 @@
+export const GET_TEMPERAMENTS = "GET_TEMPERAMENTS";
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const GET_ALL_CHARACTERS = "GET_ALL_CHARACTERS";
 export const SET_PAGE_CHARACTER = "SET_PAGE_CHARACTER";
@@ -7,26 +8,29 @@ export const CREATE_CHARACTER = "CREATE_CHARACTER";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 
-const URL_PATH = "http://localhost:3001/dogs";
+const URL_PATH = "http://localhost:3001/";
+
+export const getTemperaments = () => {
+  return function (dispatch) {
+    fetch(`${URL_PATH}temperaments`)
+      .then((response) => response.json())
+      .then((data) => dispatch({ type: GET_TEMPERAMENTS, payload: data }));
+  };
+};
 
 export const getCharacters = () => {
   return function (dispatch) {
-    fetch(URL_PATH)
+    fetch(`${URL_PATH}dogs`)
       .then((response) => response.json())
-      .then((data) => dispatch({ type: GET_CHARACTERS, payload: data }));
+      .then((data) => dispatch({ type: GET_CHARACTERS, payload: formatChar(data) }));
   };
 };
 
 export const getAllCharacters = () => {
   return function (dispatch) {
-    fetch(URL_PATH)
+    fetch(`${URL_PATH}dogs`)
       .then((response) => response.json())
-      .then((data) => {
-        return dispatch({
-          type: GET_ALL_CHARACTERS,
-          payload: formatChar(data),
-        });
-      });
+      .then((data) => dispatch({ type: GET_ALL_CHARACTERS, payload: formatChar(data) }));
   };
 };
 
