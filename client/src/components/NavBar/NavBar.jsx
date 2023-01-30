@@ -15,7 +15,7 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
   let location = useLocation();
 
   useEffect(() => {
-    if (filter) filtrar();
+    filtrar();
     if (search) searchCharacter(search);
   }, [search, setSearch, filter, setFilter, temperaments]);
 
@@ -54,8 +54,11 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
       <div className={styles.bar}>
         <ul className={styles.ul}>
           <li className={styles.li}>
-            <Link style={{ color: "inherit", textDecoration: "inherit" }} to="/dogs">
-              <a className={styles.a}>Home</a>
+            <Link
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              to={location.pathname === "/dogs" ? "/" : "/dogs"}
+            >
+              <a className={styles.a}>{location.pathname === "/dogs" ? "Landing" : "Home"}</a>
             </Link>
           </li>
           {location.pathname === "/dogs" && (
@@ -92,7 +95,12 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
                 <div className={styles.things}>
                   <ul className={styles.ul}>
                     <li className={styles.li}>
-                      <a className={styles.a} id="all" onClick={onFilter}>
+                      <a className={styles.a} id="clear" onClick={onFilter}>
+                        Clear ✖
+                      </a>
+                    </li>
+                    <li className={styles.li}>
+                      <a className={styles.a} id="allB" onClick={onFilter}>
                         All breeds ▶
                       </a>
                     </li>
@@ -116,8 +124,14 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
                             placeholder="Search.."
                             value={filter || ""}
                             id="inputTemperament"
+                            autocomplete="off"
                             onChange={handleChange}
                           />
+                          <li key="allT" className={styles.li}>
+                            <a className={styles.a} id="allT" onClick={onFilter}>
+                              All
+                            </a>
+                          </li>
                           {filteredTemperaments
                             .map((temperament) => {
                               return (
@@ -147,14 +161,17 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
               <a className={styles.a}>About</a>
             </Link>
           </li>
-          <input
-            className={styles.inputSearch}
-            type="text"
-            placeholder="Search.."
-            value={search || ""}
-            id="inputSearch"
-            onChange={handleChange}
-          />
+          {location.pathname === "/dogs" && (
+            <input
+              className={styles.inputSearch}
+              type="text"
+              placeholder="Search.."
+              value={search || ""}
+              id="inputSearch"
+              autocomplete="off"
+              onChange={handleChange}
+            />
+          )}
         </ul>
       </div>
     </>

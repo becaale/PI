@@ -56,9 +56,26 @@ export const deleteCharacter = (id) => {
 };
 
 export const createCharacter = (character) => {
-  return {
-    type: CREATE_CHARACTER,
-    payload: character,
+  return function (dispatch) {
+    fetch(`${URL_PATH}dogs`, {
+      method: "POST",
+      headers: {
+        accept: "application.json",
+        "Content-Type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(character),
+      cache: "default",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.status !== 200) return dispatch({ type: CREATE_CHARACTER, payload: data });
+        return dispatch({ type: CREATE_CHARACTER, payload: formatChar(data) });
+      })
+      .catch((error) => {
+        console.log(error);
+        return dispatch({ type: CREATE_CHARACTER, payload: error });
+      });
   };
 };
 
@@ -81,8 +98,8 @@ const formatChar = (arr) => {
     return {
       id: element.id,
       name: element.name,
-      weight: element.weight,
-      height: element.height,
+      weight: element.weight.metric,
+      height: element.height.metric,
       life_span: element.life_span,
       temperament: element.temperament,
       image: element.image.url,
