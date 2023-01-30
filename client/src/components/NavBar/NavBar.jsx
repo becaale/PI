@@ -124,7 +124,7 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
                             placeholder="Search.."
                             value={filter || ""}
                             id="inputTemperament"
-                            autocomplete="off"
+                            autoComplete="off"
                             onChange={handleChange}
                           />
                           <li key="allT" className={styles.li}>
@@ -168,7 +168,7 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
               placeholder="Search.."
               value={search || ""}
               id="inputSearch"
-              autocomplete="off"
+              autoComplete="off"
               onChange={handleChange}
             />
           )}
