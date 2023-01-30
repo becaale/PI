@@ -35,20 +35,6 @@ const getBreedById = async (id) => {
 
 const createBreed = async (name, height, weight, life_span, image, temperaments = []) => {
   if (!name || !height || !weight) throw Error("Faltan datos obligatorios");
-  const newBreed = await Breed.create({
-    name,
-    height,
-    weight,
-    life_span,
-    image,
-  });
-
-  const temperamentos = await Temperament.findAll({
-    where: {
-      name: temperaments,
-    },
-  });
-  await newBreed.addTemperament(temperamentos);
 
   /*   const newBreed = await Breed.create({
     name,
@@ -64,7 +50,36 @@ const createBreed = async (name, height, weight, life_span, image, temperaments 
       return breed.addTemperament(temperamentos);
     });
   }); */
-  return formatBreed([newBreed.dataValues]);
+
+  if (!temperaments.length) {
+    throw new Error("El array de temperamentos no puede estar vacío");
+  }
+
+  const newBreed = await Breed.create({
+    name,
+    height,
+    weight,
+    life_span,
+    image,
+  });
+
+  const temperamentos = await Temperament.findAll({
+    where: {
+      name: { [Op.in]: temperaments },
+    },
+  });
+
+  if (!temperamentos.length) {
+    throw new Error(
+      `No se encontraron registros de temperamentos con los nombres especificados: ${temperaments.join(", ")}`
+    );
+  }
+
+  await newBreed.addTemperament(temperamentos);
+
+  const breed = await getBreedById(newBreed.id);
+
+  return breed;
 };
 
 const getBreedsDB = async (name) => {
@@ -148,7 +163,7 @@ const formatBreed = (breeds) => {
       weight: JSON.parse(weight),
       life_span,
       image: JSON.parse(image),
-      temperaments: temperaments
+      temperament: temperaments
         .map((temperament) => {
           return temperament.name;
         })

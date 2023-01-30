@@ -43,9 +43,18 @@ dogsRouter.post("/", async (req, res) => {
       JSON.stringify(image),
       temperaments
     );
+
     res.status(200).json(newBreed);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.log(error);
+    res.status(400).json(error);
+    /*     res.status(400).json({
+      status: 400,
+      name: error.name,
+      detail: error.original.detail,
+      table: error.original.table,
+      parameters: error.original.parameters,
+    }); */
   }
 });
 
