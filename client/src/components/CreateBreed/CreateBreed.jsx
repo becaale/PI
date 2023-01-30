@@ -49,7 +49,8 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
           allCharsNames[char.name] = true;
         }
       });
-  }, [errors, allCharacters, characterData, stateTemperaments, temperaments]);
+    if (errorCount < 0) setErrorCount(0);
+  }, [errors, errorCount, allCharacters, characterData, stateTemperaments, temperaments]);
 
   const handleChange = (event) => {
     switch (event.target.id) {
@@ -59,7 +60,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
           name: event.target.value,
         });
         break;
-      case "height":
+/*       case "height":
         setCharacterData({
           ...characterData,
           height: formatValue(event.target.value, event.target.id),
@@ -76,8 +77,12 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
           ...characterData,
           life_span: formatValue(event.target.value, event.target.id),
         });
-        break;
+        break; */
       default:
+        setCharacterData({
+          ...characterData,
+          [event.target.id]: formatValue(event.target.value, event.target.id),
+        });
         break;
     }
     validate(event.target.value, event.target.id);
@@ -188,14 +193,12 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
   const transitionEnd = (event) => {
     toggleClass(event);
     event.target.classList.add(styles.finished);
-    setTimeout((event) => {
-      clearCreate(event);
-    }, 1000);
+    setTimeout(() => clearCreate(event), 2000);
   };
 
   const clearCreate = (event) => {
-    console.log(event);
     event.target.className = styles.button;
+    setStateTemperaments([]);
     setCharacterData({
       name: "",
       height: "",
@@ -287,20 +290,20 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
                 </label>
               </div>
               <div className={styles.charspecies}>
-                <label className={styles.labelMed} htmlFor="years">
+                <label className={styles.labelMed} htmlFor="life_span">
                   Years
                 </label>
                 <input
                   className={`${styles.inputMed} ${styles.inputs}`}
                   placeholder="Min - Max"
-                  id="years"
+                  id="life_span"
                   type="text"
                   value={characterData.life_span || ""}
                   onChange={handleChange}
                   disabled={isLoading}
                 ></input>
-                <label className={styles.error} htmlFor="years">
-                  {errorData.years || " "}
+                <label className={styles.error} htmlFor="life_span">
+                  {errorData.life_span || " "}
                 </label>
               </div>
             </div>

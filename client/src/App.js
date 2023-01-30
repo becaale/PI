@@ -20,15 +20,6 @@ import home4 from "./media/home4.mp4";
 import home5 from "./media/home5.mp4";
 import home6 from "./media/home6.mp4";
 import home7 from "./media/home7.mp4";
-import landing1 from "./media/landing1.mp4";
-import landing2 from "./media/landing2.mp4";
-import landing3 from "./media/landing3.mp4";
-import landing4 from "./media/landing4.mp4";
-import landing5 from "./media/landing5.mp4";
-import landing6 from "./media/landing6.mp4";
-import landing7 from "./media/landing7.mp4";
-import landing8 from "./media/landing8.mp4";
-import landing9 from "./media/landing9.mp4";
 
 function App() {
   const stateCharacters = useSelector((state) => state.characters);
@@ -43,35 +34,10 @@ function App() {
 
   const URL_VIDEOS_HOME = [home1, home2, home3, home4, home5, home6, home4, home7, home3, home1];
 
-  const URL_VIDEOS_LANDING = [
-    landing1,
-    landing2,
-    landing3,
-    landing4,
-    landing5,
-    landing6,
-    landing7,
-    landing8,
-    landing9,
-    landing2,
-  ];
-
   const HTML_VIDEO = (
     <div className="video">
-      <video
-        autoPlay={true}
-        muted={true}
-        loop={true}
-        poster="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg"
-      >
-        <source
-          src={`${
-            location.pathname === "/"
-              ? URL_VIDEOS_LANDING[getUniqueMinuteNumber()]
-              : URL_VIDEOS_HOME[getUniqueMinuteNumber()]
-          }`}
-          type="video/mp4"
-        />
+      <video autoPlay={true} muted={true} loop={true}>
+        <source src={URL_VIDEOS_HOME[getUniqueMinuteNumber()]} type="video/mp4" />
       </video>
     </div>
   );
@@ -89,7 +55,7 @@ function App() {
       <div className="App">
         {location.pathname !== "/" ? <NavBar /> : null}
         <div className="central">
-          {HTML_VIDEO}
+          {location.pathname !== "/" && HTML_VIDEO}
           <Route exact path="/" render={() => <Landing />} />
           <Route exact path="/dogs" render={() => <Home />} />
           <Route exact path="/dogs/:id" render={() => <Details />} />
