@@ -4,6 +4,8 @@ const { response } = require("express");
 const { connect } = require("../routes/dogsRouter");
 const { API_KEY, URL_PATH } = process.env;
 
+const axios = require("axios");
+
 const getBreeds = async () => {
   let breedsDB = await getBreedsDB();
   let breedsAPI = await getBreedsAPI();
@@ -111,7 +113,7 @@ const getBreedsDB = async (name) => {
 
 const getBreedsAPI = async (id, name) => {
   let breeds = [];
-  await fetch(`${URL_PATH}?x-api-key=${API_KEY}`)
+  /*  await fetch(`${URL_PATH}?x-api-key=${API_KEY}`)
     .then((response) => response.json())
     .then((data) => {
       breeds = data.map((breed) => {
@@ -126,7 +128,22 @@ const getBreedsAPI = async (id, name) => {
           temperament,
         };
       });
+    }); */
+
+  await axios.get(`${URL_PATH}?x-api-key=${API_KEY}`).then((response) => {
+    breeds = response.data.map((breed) => {
+      const { id, name, weight, height, life_span, image, temperament } = breed;
+      return {
+        id,
+        name,
+        weight,
+        height,
+        life_span,
+        image: image,
+        temperament,
+      };
     });
+  });
 
   if (id) breeds = [breeds.find((element) => element.id == id)];
 
