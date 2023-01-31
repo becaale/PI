@@ -8,11 +8,11 @@ export const CREATE_CHARACTER = "CREATE_CHARACTER";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 
-const URL_PATH_API = "http://localhost:3001";
+const REACT_APP_URL_PATH_API = "http://localhost:3001";
 
 export const getTemperaments = () => {
   return function (dispatch) {
-    fetch(`${URL_PATH_API}/temperaments`)
+    fetch(`${REACT_APP_URL_PATH_API}/temperaments`)
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_TEMPERAMENTS, payload: data }));
   };
@@ -20,7 +20,7 @@ export const getTemperaments = () => {
 
 export const getCharacters = () => {
   return function (dispatch) {
-    fetch(`${URL_PATH_API}/dogs`)
+    fetch(`${REACT_APP_URL_PATH_API}/dogs`)
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_CHARACTERS, payload: formatChar(data) }));
   };
@@ -28,7 +28,7 @@ export const getCharacters = () => {
 
 export const getAllCharacters = () => {
   return function (dispatch) {
-    fetch(`${URL_PATH_API}/dogs`)
+    fetch(`${REACT_APP_URL_PATH_API}/dogs`)
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_ALL_CHARACTERS, payload: formatChar(data) }));
   };
@@ -57,7 +57,7 @@ export const deleteCharacter = (id) => {
 
 export const createCharacter = (character) => {
   return function (dispatch) {
-    fetch(`${URL_PATH_API}/dogs`, {
+    fetch(`${REACT_APP_URL_PATH_API}/dogs`, {
       method: "POST",
       headers: {
         accept: "application.json",

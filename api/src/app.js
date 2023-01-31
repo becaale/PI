@@ -1,15 +1,15 @@
+require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const { URL_PATH_ACC_ORIGIN } = process.env;
-
 const dogsRouter = require("./routes/dogsRouter");
 const temperamentsRouter = require("./routes/temperamentsRouter");
 require("./db.js");
 
 const server = express();
 
+const { URL_PATH_ACC_ORIGIN } = process.env;
 server.name = "API";
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));

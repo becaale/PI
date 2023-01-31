@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { Temperament } = require("../db");
 /* const { Op } = require("sequelize"); */
 const { API_KEY, URL_PATH } = process.env;

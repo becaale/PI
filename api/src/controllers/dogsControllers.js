@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { Breed, Temperament } = require("../db");
 const { Op } = require("sequelize");
 /* const { response } = require("express");
