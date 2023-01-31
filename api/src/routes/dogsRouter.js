@@ -1,13 +1,8 @@
 const { Router } = require("express");
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
 
 const { getBreeds, createBreed, findBreed, getBreedById } = require("../controllers/dogsControllers");
 
 const dogsRouter = Router();
-
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
 
 dogsRouter.get("/", async (req, res) => {
   const { name } = req.query;
@@ -46,7 +41,7 @@ dogsRouter.post("/", async (req, res) => {
 
     res.status(200).json(newBreed);
   } catch (error) {
-    res.status(400).json(error);
+    res.status(400).json({ error: error.message });
     /*     res.status(400).json({
       status: 400,
       name: error.name,

@@ -1,7 +1,7 @@
-const { Dog, Breed, Temperament } = require("../db");
+const { Breed, Temperament } = require("../db");
 const { Op } = require("sequelize");
-const { response } = require("express");
-const { connect } = require("../routes/dogsRouter");
+/* const { response } = require("express");
+const { connect } = require("../routes/dogsRouter"); */
 const { API_KEY, URL_PATH } = process.env;
 
 const axios = require("axios");
