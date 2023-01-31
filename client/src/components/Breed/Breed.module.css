@@ -62,17 +62,17 @@ h1 {
 .bookmark {
   font-family: "FontAwesome", sans-serif;
   content: "\f057";
-  background-image: url("https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-46-512.png");
+  background-image: url("../../media/img/bookmark.png");
 }
 .heart {
   font-family: "FontAwesome", sans-serif;
   content: "\f057";
-  background-image: url("https://cdn2.iconfinder.com/data/icons/font-awesome/1792/heart-o-512.png");
+  background-image: url("../../media/img/heart.png");
 }
 .comment {
   font-family: "FontAwesome", sans-serif;
   content: "\f057";
-  background-image: url("https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0e5-512.png");
+  background-image: url("../../media/img/QA.png");
 }
 
 .card .wrapper {

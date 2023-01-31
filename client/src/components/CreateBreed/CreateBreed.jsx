@@ -7,6 +7,11 @@ import styles from "./CreateBreed.module.css";
 
 import { getTemperaments, createCharacter } from "../../redux/actions";
 
+import pulgoso from "../../media/img/pulgoso.png";
+import pata from "../../media/img/pata.png";
+import sync from "../../media/img/sync.png";
+import ok from "../../media/img/ok.png";
+
 const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharacters, errors }) => {
   let allCharsNames = {};
   const requiredData = { name: true, height: true, weight: true, life_span: false, image: false, temperaments: false };
@@ -28,7 +33,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
     height: "",
     weight: "",
     life_span: "",
-    image: "https://cdn0.iconfinder.com/data/icons/dog-17/165/dog-019-256.png",
+    image: pulgoso,
     temperaments: [],
   });
   const [errorData, setErrorData] = useState({
@@ -94,7 +99,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
 
   const validate = (value, id) => {
     let patternN = /^[0-9]{2} - [0-9]{2}$/;
-    let patternT =  /^(?=.{0,35}$)[a-zA-Z\s.]*$/;
+    let patternT = /^(?=.{0,35}$)[a-zA-Z\s.]*$/;
     let error = "";
     switch (id) {
       case "name":
@@ -186,7 +191,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
       height: "",
       weight: "",
       life_span: "",
-      image: "https://cdn0.iconfinder.com/data/icons/dog-17/165/dog-019-256.png",
+      image: pulgoso,
       temperaments: [],
     });
     setErrorData({
@@ -204,13 +209,9 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
     <form onSubmit={preventSubmit}>
       <div className={styles.createcontainer}>
         <div className={styles.leftcontainer}>
-          <img
-            src="https://cdn0.iconfinder.com/data/icons/hippicons-nature/64/paw-512.png"
-            alt=""
-            className={styles.imagen}
-          />
+          <img src={pata} alt="" className={styles.imagen} />
           <div className={styles.img}>
-            <img className={styles.imagen} src="https://cdn0.iconfinder.com/data/icons/dog-17/165/dog-019-256.png" />
+            <img className={styles.imagen} src={pulgoso} />
           </div>
         </div>
         <div className={styles.rightcontainer}>
@@ -340,18 +341,10 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
               >
                 <span className={styles.submit}>Save</span>
                 <span className={styles.active}>
-                  <img
-                    className={styles.i}
-                    src="https://cdn1.iconfinder.com/data/icons/complete-common-version-2-4/1024/update4-512.png"
-                    alt=""
-                  />
+                  <img className={styles.i} src={sync} alt="" />
                 </span>
                 <span className={styles.check}>
-                  <img
-                    className={styles.i}
-                    src="https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/ok-512.png"
-                    alt=""
-                  />
+                  <img className={styles.i} src={ok} alt="" />
                 </span>
               </button>
             </div>

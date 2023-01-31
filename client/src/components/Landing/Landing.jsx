@@ -12,6 +12,8 @@ import landing7 from "../../media/landing7.mp4";
 import landing8 from "../../media/landing8.mp4";
 import landing9 from "../../media/landing9.mp4";
 
+import imglanding1 from "../../media/img/landing1.jpeg";
+
 const URL_VIDEOS_LANDING = [
   landing1,
   landing2,
@@ -30,12 +32,7 @@ const getUniqueMinuteNumber = () => {
 
 const HTML_VIDEO = (
   <div className="video">
-    <video
-      autoPlay={true}
-      muted={true}
-      loop={true}
-      poster="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg"
-    >
+    <video autoPlay={true} muted={true} loop={true} poster={imglanding1}>
       <source src={`${URL_VIDEOS_LANDING[getUniqueMinuteNumber()]}`} type="video/mp4" />
     </video>
   </div>

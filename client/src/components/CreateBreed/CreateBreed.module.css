@@ -112,7 +112,7 @@
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(https://cdn0.iconfinder.com/data/icons/logos-21/40/Instagram-512.png);
+  background-image: url("../../media/img/photo.png");
 }
 
 .rightcontainer footer {

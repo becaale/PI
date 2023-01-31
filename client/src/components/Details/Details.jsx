@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import pulgoso from "../../media/img/pulgoso.png";
+import pata from "../../media/img/pata.png";
+
 function Details({ allCharacters }) {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -68,16 +71,9 @@ function Details({ allCharacters }) {
   return (
     <div className={styles.createcontainer}>
       <div className={styles.leftcontainer}>
-        <img
-          src="https://cdn0.iconfinder.com/data/icons/hippicons-nature/64/paw-512.png"
-          alt=""
-          className={styles.logo}
-        />
+        <img src={pata} alt="" className={styles.logo} />
         <div className={styles.img}>
-          <img
-            className={styles.imagen}
-            src={character.image || "https://cdn0.iconfinder.com/data/icons/dog-17/165/dog-019-256.png"}
-          />
+          <img className={styles.imagen} src={character.image || pulgoso} />
         </div>
       </div>
       <div className={styles.rightcontainer}>

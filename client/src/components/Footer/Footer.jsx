@@ -2,6 +2,9 @@ import React from "react";
 
 import styles from "./Footer.module.css";
 
+import linkedin from "../../media/img/linkedin.png";
+import github from "../../media/img/github.png";
+
 const Footer = () => {
   return (
     <>
@@ -14,24 +17,12 @@ const Footer = () => {
           </li>
           <li className={styles.li}>
             <a href="https://www.linkedin.com/in/becagigialejandro/">
-              <img
-                className={styles.img}
-                width="30"
-                height="30"
-                src="https://cdn3.iconfinder.com/data/icons/social-rounded-2/72/Linkedin-512.png"
-                alt="linkedin"
-              />
+              <img className={styles.img} width="30" height="30" src={linkedin} alt="linkedin" />
             </a>
           </li>
           <li className={styles.li}>
             <a href="https://github.com/becaale">
-              <img
-                className={styles.img}
-                width="30"
-                height="30"
-                src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Github-512.png"
-                alt="github"
-              />
+              <img className={styles.img} width="30" height="30" src={github} alt="github" />
             </a>
           </li>
         </ul>

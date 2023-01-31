@@ -75,7 +75,7 @@
 /* The search field */
 .input {
   box-sizing: border-box;
-  background-image: url(https://cdn0.iconfinder.com/data/icons/multimedia-solid-30px/30/search-512.png);
+  background-image: url("../../media/img/search.png");
   background-position: 6px 7px;
   background-size: 28px;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@
 
 .inputSearch {
   box-sizing: border-box;
-  background-image: url(https://cdn0.iconfinder.com/data/icons/multimedia-solid-30px/30/search-512.png);
+  background-image: url("../../media/img/search.png");
   background-position: 6px 7px;
   background-size: 28px;
   background-repeat: no-repeat;
