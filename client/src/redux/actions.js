@@ -8,7 +8,7 @@ export const CREATE_CHARACTER = "CREATE_CHARACTER";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 
-const REACT_APP_URL_PATH_API = "http://localhost:3001";
+const { REACT_APP_URL_PATH_API } = process.env;
 
 export const getTemperaments = () => {
   return function (dispatch) {
