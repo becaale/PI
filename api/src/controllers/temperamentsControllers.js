@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Temperament } = require("../db");
 /* const { Op } = require("sequelize"); */
-const { API_KEY, URL_PATH } = process.env;
+const { API_KEY, URL_PATH_API } = process.env;
 
 const axios = require("axios");
 
@@ -44,7 +44,7 @@ const getTemperamentsAPI = async () => {
       });
     });
  */
-  await axios.get(`${URL_PATH}?x-api-key=${API_KEY}`).then((response) => {
+  await axios.get(`${URL_PATH_API}?x-api-key=${API_KEY}`).then((response) => {
     response.data.forEach((element) => {
       if (element.temperament) {
         let arrTemp = element.temperament.split(", ");

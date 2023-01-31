@@ -4,7 +4,7 @@ const { Breed, Temperament } = require("../db");
 const { Op } = require("sequelize");
 /* const { response } = require("express");
 const { connect } = require("../routes/dogsRouter"); */
-const { API_KEY, URL_PATH } = process.env;
+const { API_KEY, URL_PATH_API } = process.env;
 
 const axios = require("axios");
 
@@ -132,7 +132,7 @@ const getBreedsAPI = async (id, name) => {
       });
     }); */
 
-  await axios.get(`${URL_PATH}?x-api-key=${API_KEY}`).then((response) => {
+  await axios.get(`${URL_PATH_API}?x-api-key=${API_KEY}`).then((response) => {
     breeds = response.data.map((breed) => {
       const { id, name, weight, height, life_span, image, temperament } = breed;
       return {
