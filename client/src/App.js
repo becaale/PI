@@ -47,9 +47,6 @@ function App() {
     if (stateTemperaments.length === 0) dispatch(getTemperaments());
   }, [stateTemperaments, stateCharacters, dispatch]);
 
-  const onSearch = (character) => {
-    dispatch(searchCharacter(character));
-  };
   return (
     <>
       <div className="App">
