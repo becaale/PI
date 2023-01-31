@@ -60,24 +60,6 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
           name: event.target.value,
         });
         break;
-/*       case "height":
-        setCharacterData({
-          ...characterData,
-          height: formatValue(event.target.value, event.target.id),
-        });
-        break;
-      case "weight":
-        setCharacterData({
-          ...characterData,
-          weight: formatValue(event.target.value, event.target.id),
-        });
-        break;
-      case "years":
-        setCharacterData({
-          ...characterData,
-          life_span: formatValue(event.target.value, event.target.id),
-        });
-        break; */
       default:
         setCharacterData({
           ...characterData,
@@ -112,12 +94,12 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
 
   const validate = (value, id) => {
     let patternN = /^[0-9]{2} - [0-9]{2}$/;
-    let patternT = /^[a-zA-Z ]+$/;
+    let patternT =  /^(?=.{0,35}$)[a-zA-Z\s.]*$/;
     let error = "";
     switch (id) {
       case "name":
         if (allCharsNames[value]) error = "This name already exist";
-        if (!patternT.test(value)) error = "Only letters";
+        if (!patternT.test(value)) error = "Only letters, max 35 chars";
         if (value === "") error = "Required data";
         break;
       case "temperaments":

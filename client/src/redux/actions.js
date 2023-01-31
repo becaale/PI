@@ -68,12 +68,10 @@ export const createCharacter = (character) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.status !== 200) return dispatch({ type: CREATE_CHARACTER, payload: data });
         return dispatch({ type: CREATE_CHARACTER, payload: formatChar(data) });
       })
       .catch((error) => {
-        console.log(error);
         return dispatch({ type: CREATE_CHARACTER, payload: error });
       });
   };

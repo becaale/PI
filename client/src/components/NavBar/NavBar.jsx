@@ -58,7 +58,7 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to={location.pathname === "/dogs" ? "/" : "/dogs"}
             >
-              <a className={styles.a}>{location.pathname === "/dogs" ? "Landing" : "Home"}</a>
+              <span className={styles.a}>{location.pathname === "/dogs" ? "Landing" : "Home"}</span>
             </Link>
           </li>
           {location.pathname === "/dogs" && (
@@ -153,12 +153,12 @@ function NavBar({ filterCards, orderCards, temperaments, searchCharacter }) {
           )}
           <li className={styles.li}>
             <Link style={{ color: "inherit", textDecoration: "inherit" }} to="/creation">
-              <a className={styles.a}>Create Breed</a>
+              <span className={styles.a}>Create Breed</span>
             </Link>
           </li>
           <li className={styles.li}>
             <Link style={{ color: "inherit", textDecoration: "inherit" }} to="/about">
-              <a className={styles.a}>About</a>
+              <span className={styles.a}>About</span>
             </Link>
           </li>
           {location.pathname === "/dogs" && (

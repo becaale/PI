@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Breeds from "../Breeds/Breeds";
 import Pagination from "../Pagination/Pagination";
 
 import styles from "./Home.module.css";
-
 
 const Home = () => {
   return (

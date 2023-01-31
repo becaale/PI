@@ -12,7 +12,7 @@ export default function Breed({ id, name, weight, temperament, image }) {
           <div className={styles.content}>
             <h1 className={styles.title}>
               <Link style={{ color: "inherit", textDecoration: "inherit" }} to={`/dogs/${id}`}>
-                <a className={styles.a}>{name}</a>
+                <span className={styles.a}>{name}</span>
               </Link>
             </h1>
             <span className={styles.author}>{weight} Kg</span>

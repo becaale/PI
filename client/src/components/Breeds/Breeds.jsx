@@ -6,12 +6,8 @@ import { filterCards, orderCards } from "../../redux/actions";
 
 import Breed from "../Breed/Breed";
 
-function Breeds({ pageChars, onClose, orderCards, filterCards }) {
+function Breeds({ pageChars }) {
   const [characters, setCharacters] = useState(pageChars);
-
-  const onDetail = () => {
-    //
-  };
 
   useEffect(() => {
     setCharacters(pageChars);
@@ -28,7 +24,6 @@ function Breeds({ pageChars, onClose, orderCards, filterCards }) {
               weight={character.weight}
               temperament={character.temperament}
               image={character.image}
-              onDetail={onDetail}
             />
           </div>
         );

@@ -31,7 +31,6 @@ function Details({ allCharacters }) {
           temperament: charActive.temperament.split(", "),
         };
       }
-      console.log(charActive);
       setCharacter(charActive);
     } else if (!id) {
       setCharacter({
@@ -63,9 +62,7 @@ function Details({ allCharacters }) {
 
   function addClass(event) {
     toggleClass(event);
-    console.log(event.target.classList);
     event.target.classList.add(styles.finished);
-    console.log(event.target.classList);
   }
 
   return (
@@ -97,7 +94,6 @@ function Details({ allCharacters }) {
                 id="height"
                 type="text"
                 value={character.height || " "}
-                onChange={"handleChange"}
                 disabled={isLoading}
               ></input>
             </div>
@@ -111,7 +107,6 @@ function Details({ allCharacters }) {
                 id="weight"
                 type="text"
                 value={character.weight || " "}
-                onChange={"handleChange"}
                 disabled={isLoading}
               ></input>
             </div>
@@ -125,7 +120,6 @@ function Details({ allCharacters }) {
                 id="years"
                 type="text"
                 value={character.life_span.replace(" years", "") || " "}
-                onChange={"handleChange"}
                 disabled={isLoading}
               ></input>
             </div>
@@ -142,7 +136,7 @@ function Details({ allCharacters }) {
                         return (
                           <li key={temperament}>
                             <input type="checkbox" id={temperament} value={temperament} disabled={isLoading} checked />
-                            <label htmlFor={temperament} disabled="true">
+                            <label htmlFor={temperament} disabled={true}>
                               {temperament}
                             </label>
                           </li>

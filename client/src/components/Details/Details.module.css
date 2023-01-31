@@ -45,6 +45,7 @@
 }
 
 .rightcontainer .h1:nth-of-type(1) {
+  overflow-wrap: break-word;
   color: #281a1a;
   font-size: calc(2em + 1vw);
   font-weight: 600;

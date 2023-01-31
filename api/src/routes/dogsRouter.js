@@ -46,7 +46,6 @@ dogsRouter.post("/", async (req, res) => {
 
     res.status(200).json(newBreed);
   } catch (error) {
-    console.log(error);
     res.status(400).json(error);
     /*     res.status(400).json({
       status: 400,

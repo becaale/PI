@@ -83,7 +83,6 @@ const createBreed = async (name, height, weight, life_span, image, temperaments 
 };
 
 const getBreedsDB = async (name) => {
-  console.log(name);
   const query = name
     ? {
         where: {

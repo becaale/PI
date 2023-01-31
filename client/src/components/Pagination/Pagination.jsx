@@ -57,49 +57,29 @@ const Pagination = ({ characters, setPageCharacter }) => {
 
     if (numOfButtons.length < 6) {
       tempNumberOfButtons = numOfButtons;
-      // console.log("a", numOfButtons);
     } else if (currentPage >= 1 && currentPage <= 3) {
       tempNumberOfButtons = [1, 2, 3, 4, 5, dotsInitial, numOfButtons.length];
-      // console.log("b");
     } else if (currentPage === 4) {
       const sliced = numOfButtons.slice(0, 5);
       tempNumberOfButtons = [...sliced, dotsInitial, numOfButtons.length];
-      //  console.log("c");
     } else if (currentPage > 4 && currentPage < numOfButtons.length - 2) {
-      // from 5 to 8 -> (10 - 2)
       const sliced1 = numOfButtons.slice(currentPage - 2, currentPage);
-      // sliced1 (5-2, 5) -> [4,5]
       const sliced2 = numOfButtons.slice(currentPage, currentPage + 1);
-      // sliced1 (5, 5+1) -> [6]
       tempNumberOfButtons = [1, dotsLeft, ...sliced1, ...sliced2, dotsRight, numOfButtons.length];
-      // [1, '...', 4, 5, 6, '...', 10]
-      // console.log("d");
     } else if (currentPage > numOfButtons.length - 3) {
-      // > 7
       const sliced = numOfButtons.slice(numOfButtons.length - 4);
-      // slice(10-4)
       tempNumberOfButtons = [1, dotsLeft, ...sliced];
-      //console.log("e");
     } else if (currentPage === dotsInitial) {
-      // [1, 2, 3, 4, "...", 10].length = 6 - 3  = 3
-      // arrOfCurrButtons[3] = 4 + 1 = 5
-      // or
-      // [1, 2, 3, 4, 5, "...", 10].length = 7 - 3 = 4
-      // [1, 2, 3, 4, 5, "...", 10][4] = 5 + 1 = 6
       SetCurrentPage(arrOfCurrButtons[arrOfCurrButtons.length - 3] + 1);
-      //  console.log("f");
     } else if (currentPage === dotsRight) {
       SetCurrentPage(arrOfCurrButtons[3] + 2);
-      //  console.log("g");
     } else if (currentPage === dotsLeft) {
       SetCurrentPage(arrOfCurrButtons[3] - 2);
-      //  console.log("h");
     }
 
     setArrOfCurrButtons(tempNumberOfButtons);
     const value = currentPage * charsPerPage;
     onPageChangeEvent(value - charsPerPage, value);
-    //console.log(tempNumberOfButtons, arrOfCurrButtons, numOfButtons, currentPage, value, charsPerPage, numOfPages);
   }, [characters, currentPage, charsPerPage, numOfPages]);
 
   return (

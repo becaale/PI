@@ -56,7 +56,7 @@ export default function Landing() {
                 daycare, grooming &amp; training
               </p>
               <Link to="/dogs">
-                <a className={styles.style9}>join now</a>
+                <span className={styles.style9}>join now</span>
               </Link>
             </div>
           </div>
