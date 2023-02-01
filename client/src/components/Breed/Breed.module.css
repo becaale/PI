@@ -122,7 +122,7 @@ h1 {
   align-items: end;
 }
 .card .text {
-  /* height: 4em; */
+  max-height: 6em;
   min-height: 4em;
   margin: 0;
 }
