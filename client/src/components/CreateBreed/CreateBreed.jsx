@@ -62,7 +62,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
       case "name":
         setCharacterData({
           ...characterData,
-          name: event.target.value,
+          name: event.target.value.replace(/\b\w/g, (letter) => letter.toUpperCase()),
         });
         break;
       default:
@@ -113,6 +113,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
       default:
         if (value.length === 7 && !patternN.test(value)) error = "Only numbers";
         if (value.length === 7 && Number(value.slice(0, 2)) > Number(value.slice(5))) error = "Max less than Min";
+        if (value.length < 7) error = "Incomplete data";
         if (value === "") error = "Required data";
         break;
     }
@@ -240,7 +241,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
             <div className={styles.set}>
               <div className={styles.charspecies}>
                 <label className={styles.labelMed} htmlFor="height">
-                  Height
+                  Height range
                 </label>
                 <input
                   className={`${styles.inputMed} ${styles.inputs}`}
@@ -257,7 +258,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
               </div>
               <div className={styles.charspecies}>
                 <label className={styles.labelMed} htmlFor="weight">
-                  Weight
+                  Weight range
                 </label>
                 <input
                   className={`${styles.inputMed} ${styles.inputs}`}
@@ -274,7 +275,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
               </div>
               <div className={styles.charspecies}>
                 <label className={styles.labelMed} htmlFor="life_span">
-                  Years
+                  Years range
                 </label>
                 <input
                   className={`${styles.inputMed} ${styles.inputs}`}
