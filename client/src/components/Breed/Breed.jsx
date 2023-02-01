@@ -3,11 +3,16 @@ import { Link } from "react-router-dom";
 
 import styles from "./Breed.module.css";
 
+import pulgoso from "../../media/img/pulgoso.png";
+
 export default function Breed({ id, name, weight, temperament, image }) {
+  if (image === "pulgoso" || !image) image = pulgoso;
+  const styleimg = `${styles.img} ${image !== pulgoso ? styles.preimg : ""}`;
+
   return (
     <div className={`${styles.containerCard} ${styles.card}`}>
       <div className={styles.wrapper}>
-        <img className={styles.img} src={image} alt={`img of ${name}`} />
+        <img className={styleimg} src={image} alt={`img of ${name}`} />
         <div className={styles.data}>
           <div className={styles.content}>
             <h1 className={styles.title}>

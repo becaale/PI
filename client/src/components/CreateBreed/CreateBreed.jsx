@@ -33,7 +33,7 @@ const CreateBreed = ({ temperaments, getTemperaments, createCharacter, allCharac
     height: "",
     weight: "",
     life_span: "",
-    image: pulgoso,
+    image: "pulgoso",
     temperaments: [],
   });
   const [errorData, setErrorData] = useState({

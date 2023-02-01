@@ -32,6 +32,7 @@ function Details({ allCharacters }) {
         charActive = {
           ...charActive,
           temperament: charActive.temperament.split(", "),
+          image: charActive.image === "pulgoso" && pulgoso,
         };
       }
       setCharacter(charActive);
